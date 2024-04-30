@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Start Favicon  TODO Edit Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="data:image/png;base64,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"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAd9JREFUWEft1surTmEUx/HPKQNyyUAmbjPlEhmccslQyoCBuQzOQEaiKBkwOkdIJvwRlDLFgGRElEsdEbkkd1I4JJ6l561tt88+++zjdc7gfWZ777We9V2/9az17D6TvPomOb4eQE+BKanAI8yq6I63WFHxfjEG2nZTlQKfMAd38a2w8Xtsrgi0Ade6ARDZ3m+w8VpcbGBXaVKnQFOAtrH/+NUB3MCXwu67cW9C0Sqc6wBe40fBZxtu/k+A8ZZgGmZnwDi8X0uwld//5RlYh+s56CVsKgHswpn87hT2jHUG9uNFYZPvOFdTgiLATyzCy4L9VWwcD0A51jvMawAQ8k/HXpzM9jGsHmMEM1CrwHZEvcorFDjfAOAK1uAB+rN9qHkUF7B1LIC2B71TgpA6xvlOLMMwbmMhBtOYP95tgGjVyPhymjNH0v1xNo/103iWIWpLMFEFIuPlSYEn+S4JgINYjy04VFZgR8uIH3NNO+6dEjzFknQQh9IsOIDPeIWlOJae95UBfrUEuINVBd8ywEqETawoxeE0qE7k7virBN0CiMC3Uuesztk/HA2grrfrxIlh86FgMDMHinbtXFoxjOYWlFiA+XiTfmKejzYJW1aknduU/Cdsl0pLr54CPQV+A36Mb5WriLwRAAAAAElFTkSuQmCC"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAPRJREFUOE+t0r8rRWEcx/HXDYvEbLBLyuwfMCr/gZTFZrAYlMW/IF2ZZDH5E5QFm1+jyaAkA0oi7vf2PTod3dOpe7/L+T6n5/vu/Xyep6XPavU5b6CAdQyl0Skus5/GZC/TssEHNvGKc1zl0B6WmwI2EnCM9yb5VA128IZ2ggrGCN28PvPH37oKWMALHvFUMtjHUmYRkAt8Y74MOEKQow5xUgEsYhV3OMN9FVB35DD4wThuMYXZAjBXM/mAZwTgGit51VudkCPw7hGC3KvWsJuAmzSYwUEn1O0CMFoDiMC+MJHf6IezHwu7gT7lJu/m356+DX4B8ZgyS8UObWIAAAAASUVORK5CYII="
+    />
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsImljb25zIjpbeyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dLCJ0aGVtZV9jb2xvciI6IiNmZmZmZmYiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIn0=" />
+    <!-- End Favicon  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erik Margetis</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script type="module" crossorigin src="/assets/index.dd714092.js"></script>
+    <link rel="stylesheet" href="/assets/index.91c34db5.css">
+  </head>
+  <body>
+    <!-- Contact Buttons -->
+    <div class="flex flex-col fixed z-50 w-12 text-2xl space-y-2 top-3 right-3">
+      <a
+        href="#"
+        id="menu"
+        class="flex h-12 items-center shadow-md justify-center font-medium rounded-md text-white bg-syncoBlue hover:bg-gray-600"
+      >
+        <i class="fas fa-bars"></i>
+      </a>
+      <a
+        href="mailto:erik.margetis@gmail.com"
+        class="menuItem flex h-12 items-center shadow-md justify-center border border-transparent font-medium rounded-full text-white bg-syncoBlue hover:bg-gray-600"
+        target="_blank"
+      >
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/emargetis/"
+        class="menuItem flex h-12 items-center shadow-md justify-center border border-transparent font-medium rounded-full text-white bg-syncoBlue hover:bg-gray-600"
+        target="_blaank"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a
+        href="https://github.com/emargetis"
+        class="menuItem flex h-12 items-center shadow-md justify-center border border-transparent font-medium rounded-full text-white bg-syncoBlue hover:bg-gray-600"
+        target="_blank"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+      <a
+        href="assets/Margetis_Erik_Resume.pdf"
+        target="_blank"
+        class="menuItem flex h-12 items-center shadow-md justify-center border border-transparent font-medium rounded-full text-white bg-syncoBlue hover:bg-gray-600"
+      >
+        <i class="fas fa-file-alt"></i>
+      </a>
+    </div>
+
+    <!-- Header -->
+    <div class="relative py-16 bg-white">
+      <div
+        class="hidden absolute top-0 inset-x-0 h-1/2 bg-white lg:block"
+        aria-hidden="true"
+      ></div>
+      <div class="max-w-7xl mx-auto bg-gray-200 lg:bg-transparent lg:px-8">
+        <div class="lg:grid lg:grid-cols-12">
+          <div
+            class="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent"
+          >
+            <div
+              class="absolute inset-x-0 h-1/2 bg-white lg:hidden"
+              aria-hidden="true"
+            ></div>
+            <div class="max-w-sm mx-auto px-4 sm:px-6 lg:p-0">
+              <div class="aspect-w-1 aspect-h-1">
+                <img
+                  class="object-cover object-center rounded-3xl shadow-2xl"
+                  src="/assets/Erik_Margetis_Enhanced.0c881e91.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-gray-200 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center"
+          >
+            <div
+              class="relative max-w-md mx-auto py-12 px-4 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6"
+            >
+              <h2
+                class="text-3xl font-extrabold text-gray-900"
+                id="join-heading"
+              >
+                Hi! I'm Erik &#x1f44b;
+              </h2>
+              <h4 class="text-xl text-gray-500 mt-1">
+                📍San Francisco, California
+              </h4>
+              <p class="text-lg text-gray-900 mt-6">
+                I'm a former product manager turned
+                full-stack software engineer.
+              </p>
+              <p class="text-lg text-gray-900 mt-6">
+                I have experience with JavaScript/Node.js, React, Go,
+                PostgreSQL, MongoDB and multiple cloud providers (AWS and
+                Cloudflare).
+              </p>
+              <p class="text-lg text-gray-900 mt-6">
+                Most recently, I built
+                <a
+                  class="text-syncoBlue hover:text-gray-600 underline underline-offset-1"
+                  href="https://syncosaurus.github.io/"
+                  target="_blank"
+                  >🦖 Syncosaurus</a
+                >, an open-source framework for real-time, collaborative web
+                applications.
+              </p>
+              <a
+                class="mt-6 block w-full py-3 px-5 text-center bg-syncoBlue border border-transparent rounded-md shadow-md text-base font-medium text-white hover:bg-gray-600 sm:inline-block sm:w-auto"
+                href="assets/Margetis_Erik_Resume.pdf"
+                target="_blank"
+                ><span class="text-xl mr-3"
+                  ><i class="fas fa-file-alt"></i></span
+                >Resume</a
+              >
+              <a
+                class="mt-6 sm:mx-2 block w-full py-3 px-5 text-center bg-syncoBlue border border-transparent rounded-md shadow-md text-base font-medium text-white hover:bg-gray-600 sm:inline-block sm:w-auto"
+                href="https://syncosaurus.github.io/case-study"
+                target="_blank"
+                ><span class="text-xl mr-3"
+                  ><i class="fa-solid fa-gears"></i></span
+                >Syncosaurus Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Syncosaurus -->
+    <div class="relative py-16">
+      <div
+        class="hidden absolute top-0 inset-x-0 h-1/2 lg:block"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="bg-gradient-to-br from-syncoBlue via-syncoBlue to-syncoGreen"
+      >
+        <div
+          class="max-w-7xl mx-auto lg:to-transparent lg:from-transparent lg:bg-transparent lg:px-8"
+        >
+          <div class="lg:grid lg:grid-cols-12">
+            <div
+              class="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent"
+            >
+              <div class="max-w-sm mx-auto px-4 sm:px-6 lg:p-0">
+                <div class="aspect-w-1 aspect-h-1">
+                  <img
+                    src="/assets/syncosaurus_logo.0df96dcc.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center lg:py-12"
+            >
+              <div
+                class="relative max-w-md mx-auto py-12 px-4 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6"
+              >
+                <h1 class="bold text-3xl font-extrabold text-white mt-6">Syncosaurus</h1>
+                <p class="text-2xl text-white mt-6">
+                  A JavaScript and React framework that enables developers to quickly add
+                  real-time collaborative features to a new or existing
+                  application.
+                </p>
+                <div class="wrap mx-auto">
+                  <div class="grid grid-rows-10 grid-cols-6">
+                    <div class="row-start-1 col-start-1 col-span-5 self-end mt-6">
+                      <object
+                        type="image/svg+xml"
+                        data="images/diag_whiteboard_demo_dual.svg"
+                        className="w-1/2"
+                      ></object>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-2xl text-white mt-6">
+                  Key features include:
+                  <ul class="text-2xl text-white">
+                    <li>- Robust and Flexible Collaboration Engine</li>
+                    <li>- Command line tool for development and deployment</li>
+                    <li>- Built-in dashboard for monitoring and debugging</li>
+                  </ul>
+                </p>
+                <br />
+                <div class="wrap mx-auto">
+                  <div class="grid grid-rows-10 grid-cols-6">
+                    <div class="row-start-1 col-start-1 col-span-5 self-end">
+                      <img
+                        class="object-cover rounded-lg shadow-lg dark:shadow-black/20"
+                        src="/assets/dashboard_screenshot.f083ae14.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="row-start-2 col-start-2 col-span-5 -mt-28 self-end">
+                      <img
+                        class="object-cover rounded-lg shadow-lg dark:shadow-black/20"
+                        src="/assets/syncosaurus-init.19901a57.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <a
+                    class="mt-6 sm:mx-2 block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-syncoBlue hover:bg-white hover:text-syncoGreen sm:inline-block sm:w-auto"
+                    href="https://syncosaurus.github.io/case-study"
+                    target="_blank"
+                    ><span class="text-xl mr-3"
+                    ><i class="fa-solid fa-gears"></i></span
+                  >Syncosaurus Case Study</a
+                  >
+                </div>
+
+                <!-- <div>
+                <img class="rounded-lg shadow-lg" src="images/katherine/fullarchitecture_white.png" alt="">
+              </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Projects -->
+    <div class="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
+      <div class="absolute inset-0">
+        <div class="bg-white h-1/3 sm:h-2/3"></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto">
+        <div class="text-center">
+          <h2
+            class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"
+          >
+            Other Projects
+          </h2>
+        </div>
+        <div
+          class="mt-12 max-w-lg mx-auto grid gap-10 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 md:max-w-none"
+        >
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/messbuck.0c2b46b9.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">
+                  Message Bucket
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  RequestBin-like tool for receiving and debugging webhooks
+                </p>
+                <p class="mt-3 text-base text-syncoBlue">
+                  React, Node.js/Express, PostgreSQL, Webhooks
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/todotracker.8ca48b3c.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">
+                  ToDo List
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  An interactive todo list manager
+                </p>
+                <p class="mt-3 text-base text-syncoBlue">
+                  JavaScript, Handlebars, Node.js/Express
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/eCart.fca1dc41.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">
+                  eCart
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  An ecommerce shopping cart
+                </p>
+                <p class="mt-3 text-base text-syncoBlue">React, Express, Node.js, MongoDB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-syncoBlue">
+      <div class="mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+          <span class="block">Let's Connect!</span>
+        </h2>
+        <p class="mt-4 mb-4 text-lg leading-6 text-gray-200">
+          I'm looking for my next opportunity as a software engineer! Please get in touch if you think
+          I'd be a good fit for your team.
+        </p>
+        <div class="flex items-center justify-center flex-wrap">
+          <a
+            href="mailto:erik.margetis@gmail.com"
+            class="w-2/5 mt-4 mx-2 inline-flex items-center shadow-md justify-center px-5 py-2 border border-transparent font-medium rounded-md text-syncoBlue bg-white hover:bg-gray-300 sm:w-auto"
+            target="_blank"
+          >
+            <span class="text-xl mr-3"><i class="fas fa-envelope"></i></span
+            >Email
+          </a>
+          <a
+            href="https://www.linkedin.com/in/emargetis"
+            class="w-2/5 mt-4 mx-2 inline-flex items-center shadow-md justify-center px-5 py-2 border border-transparent font-medium rounded-md text-syncoBlue bg-white hover:bg-gray-300 sm:w-auto"
+            target="_blank"
+          >
+            <span class="text-xl mr-3"><i class="fab fa-linkedin"></i></span
+            >LinkedIn
+          </a>
+          <a
+            href="https://github.com/emargetis"
+            class="w-2/5 mt-4 mx-2 inline-flex items-center shadow-md justify-center px-5 py-2 border border-transparent font-medium rounded-md text-syncoBlue bg-white hover:bg-gray-300 sm:w-auto"
+            target="_blank"
+          >
+            <span class="text-xl mr-3"><i class="fab fa-github"></i></span
+            >GitHub
+          </a>
+          <a
+            href="assets/Margetis_Erik_Resume.pdf"
+            target="_blank"
+            class="w-2/5 mt-4 mx-2 inline-flex items-center shadow-md justify-center px-5 py-2 border border-transparent font-medium rounded-md text-syncoBlue bg-white hover:bg-gray-300 sm:w-auto"
+          >
+            <span class="text-xl mr-3"><i class="fas fa-file-alt"></i></span
+            >Resume
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
