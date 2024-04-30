@@ -1,0 +1,1 @@
+const e=document.getElementById("menu"),t=[...document.getElementsByClassName("menuItem")];e.addEventListener("click",(e=>{e.preventDefault(),t.forEach((e=>{e.classList.toggle("hidden"),e.classList.toggle("flex")}))}));

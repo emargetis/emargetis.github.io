@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Start Favicon  TODO Edit Favicon --> 
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.fb904684.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA9JJREFUWEfFV0kotWEUfi5CETKXISkkFoZEhrIyS+awMZQSyUzYYGHcGTIsJFNigaJkIRaGzFJmCxtKEiESV+fUvfnl++79bvf6T327977neZ/znPOcK5PL5XL8x5BpC8Dp6SnKy8thaGiI3t5e2NjYqPUsrQC4uLhAWFgY4uPj8fLyAj09PQwNDf0NgPf3dwQHByM8PBzt7e3Y3NxEXl4eDg4O/gZAd3c36Nvd3YWRkRFGRkYwPDyMhYUF3QN4fn6Gm5sbOjs7kZyczAmpDCEhIaipqdE9gJ6eHk5+eHgIfX19HB0dwdfXF8fHx3BxcdEtgM/PT3h7e6OwsJA/irS0NAYyPj6uVnI6pHEXrK6uIjo6GldXVzA3N8fKygoiIyOxt7cHDw8P3QPIzs6GiYkJC/Dt7Q0BAQEMqLW1Ve3kGjNwf38PZ2dnrK+vw8vLC01NTaz+7e1tmJqa6h5AV1cXpqensbi4iP39fR5C1HY0D6SGZA2Qdfj4+KChoYFrHhQUhPT0dNTW1krNzeclA1hbW0NWVhZOTk5QWVmJs7MzzM7Osvo1CckAcnNzWeX0EQDSgZWVlSa5pTNA4qPE9GLq+ZmZGXh6evIgcnd3h5mZmWQgkhigyUf9fn5+ztZLUVFRgevrawZCXWBsbCwJhNoASHz+/v4g94uJieGak/sVFxejpKREOQNiY2N1A4DaLCoqChEREbCzs2P6yfXIfGQyGQoKCtgH8vPztQ/g8fERgYGBeH19ZZNRKN/Pz4+TETu0D5SVlSEhIUG7AD4+PpCamsrCc3Jy4hrPzc3B1dWVE5EpdXR0oKWlBZeXl7CwsNAugLa2NlRXVysvzcnJYQESsJ2dHQwMDHAXjI6OIi4uTlJylYNoY2ODBff09MTTLyUlBVVVVZyE9j5iJDExEaWlpewNP4OGFZWPjEooRLuAnI223aWlJd71iH5HR0eMjY1xR1hbWzOQ34K2JfIG2hXEhCkKgMSVkZEBEpvi5TSGqefr6+sFX0W/o6QPDw+YmJjgLtGIgZubG558RKW9vT3fMTk5yZ6/tbUleCltRHV1dXzG0tJSVBeiDDQ3N/N0m5qaUl5CNXVwcGAbVnTC9wxUKlpMyK5DQ0NVilIQAKmc5juNX7Ld75GZmckGRAvp91heXkZSUhIaGxuVe6IqBIIA5ufnUVRUxCI0MDD45x5ihV7X19fH4MgLBgcH0d/fz3uCQi+qkou2IYmIGCCz+S1oKyI7pulIQcKkgUT0i4nu512CDCj+NItddnd3h9vbW55+tra2gi0pxoTabqgOnZqc+QJeMgu/tN42nAAAAABJRU5ErkJggg=="
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZJJREFUOE+Vk7/LQWEUx7+3WCys5N4MyiCD0cCmLIaLzaB0BxsZTCKJciM/k5RdFmVkuIMsd/YPmMR062bx6749T3lze3ldZ3nqdM7nnPM952E0TdPwwWRZhtlsht/v/xPJfAKs12ssl0soioJ+v/8d4Ha7QRAETCYT5PN5dDqd7wDz+ZwmOJ1ObDYb5HK57wCZTAa9Xg/pdBrj8RgWi8U4YLfbYTqdwmq1wuVyIRKJvJT6rYj1eh2hUAir1QqVSuXtnl4CrtcrCoUC7vc7isUibDYbTCaT8Q4WiwWd2ePx4Hg8wu12o1wuGwOQ6uFwGOS+yAqTySRKpRKq1aoxAGl9MBigVqshGo1iNBohEAggHo9/Bmy3WyQSCSpao9EAz/OIxWLwer00WZIkOBwOOtrDdCKez2cqmiiKyGaz6Ha7v4GHw4H6W62WrhMdYDabwW63IxgMYjgc0tfn89F/QE653W7Tu3g2HYAEkQoMw0BVVaRSKbAsi/1+j2azCY7j/r9EojxJftjlcsHpdKJVn/3PlB/ab8/RiKQmOgAAAABJRU5ErkJggg=="
+    />
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsImljb25zIjpbeyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dLCJ0aGVtZV9jb2xvciI6IiNmZmZmZmYiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIn0=" />
+    <!-- End Favicon  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katherine Beck</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  <script type="module" crossorigin src="/assets/index.70e8a50b.js"></script>
+  <link rel="stylesheet" href="/assets/index.248b2eda.css">
+</head>
+  <body>
+    <!-- Contact Buttons -->
+    <div class="flex flex-col fixed z-50 w-12 text-2xl space-y-2 top-3 right-3">
+      <a
+        href="#"
+        id="menu"
+        class="
+          flex
+          h-12
+          items-center
+          shadow-md
+          justify-center
+          font-medium
+          rounded-md
+          text-white
+          bg-midnightblue
+          hover:bg-gray-600
+        "
+      >
+        <i class="fas fa-bars"></i>
+      </a>
+      <a
+        href="mailto:hello@katherinebeck.me"
+        class="
+          menuItem
+          flex
+          h-12
+          items-center
+          shadow-md
+          justify-center
+          border border-transparent
+          font-medium
+          rounded-full
+          text-white
+          bg-midnightblue
+          hover:bg-gray-600
+        "
+        target="_blank"
+      >
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/katherine-m-beck/"
+        class="
+          menuItem
+          flex
+          h-12
+          items-center
+          shadow-md
+          justify-center
+          border border-transparent
+          font-medium
+          rounded-full
+          text-white
+          bg-midnightblue
+          hover:bg-gray-600
+        "
+        target="_blaank"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a
+        href="https://github.com/kathmbeck"
+        class="
+          menuItem
+          flex
+          h-12
+          items-center
+          shadow-md
+          justify-center
+          border border-transparent
+          font-medium
+          rounded-full
+          text-white
+          bg-midnightblue
+          hover:bg-gray-600
+        "
+        target="_blank"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+      <a
+        href="assets/Katherine_Beck_Resume.pdf"
+        target="_blank"
+        class="
+          menuItem
+          flex
+          h-12
+          items-center
+          shadow-md
+          justify-center
+          border border-transparent
+          font-medium
+          rounded-full
+          text-white
+          bg-midnightblue
+          hover:bg-gray-600
+        "
+      >
+        <i class="fas fa-file-alt"></i>
+      </a>
+    </div>
+
+    <!-- Header -->
+    <div class="relative py-16 bg-white">
+      <div
+        class="hidden absolute top-0 inset-x-0 h-1/2 bg-white lg:block"
+        aria-hidden="true"
+      ></div>
+      <div class="max-w-7xl mx-auto bg-gray-200 lg:bg-transparent lg:px-8">
+        <div class="lg:grid lg:grid-cols-12">
+          <div
+            class="
+              relative
+              z-10
+              lg:col-start-1
+              lg:row-start-1
+              lg:col-span-4
+              lg:py-16
+              lg:bg-transparent
+            "
+          >
+            <div
+              class="absolute inset-x-0 h-1/2 bg-white lg:hidden"
+              aria-hidden="true"
+            ></div>
+            <div class="max-w-sm mx-auto px-4 sm:px-6 lg:p-0">
+              <div class="aspect-w-1 aspect-h-1">
+                <img
+                  class="object-cover object-center rounded-3xl shadow-2xl"
+                  src="/assets/Katherine_Site.92b5dfdc.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="
+              relative
+              bg-gray-200
+              lg:col-start-3
+              lg:row-start-1
+              lg:col-span-10
+              lg:rounded-3xl
+              lg:grid lg:grid-cols-10
+              lg:items-center
+            "
+          >
+            <div
+              class="
+                relative
+                max-w-md
+                mx-auto
+                py-12
+                px-4
+                sm:max-w-3xl
+                sm:py-16
+                sm:px-6
+                lg:max-w-none
+                lg:p-0
+                lg:col-start-4 lg:col-span-6
+              "
+            >
+              <h2
+                class="text-3xl font-extrabold text-gray-900"
+                id="join-heading"
+              >
+              &#x1f44b; Hi! I'm Katherine. 
+              </h2>
+              <h4 class="text-xl text-gray-500 mt-1">
+                Los Angeles, California
+              </h4>
+              <p class="text-lg text-gray-900 mt-6">
+                I'm a full-stack Software Engineer currently based in 
+                Los Angeles, California, with experience in
+                JavaScript/Node.js, Ruby, PostgreSQL, AWS, Docker, and React. 
+              </p>
+              <p class="text-lg text-gray-900 mt-6">
+                Most recently, I built
+                <a
+                  class="text-grouparooblue hover:text-airbytepurple"
+                  href="https://tapestry-pipeline.github.io/"
+                  target="_blank"
+                  >Tapestry</a
+                >, an open-source
+                pipeline orchestration framework 
+                for user entity data. 
+              </p>
+              <a
+                class="
+                  mt-6
+                  block
+                  w-full
+                  py-3
+                  px-5
+                  text-center
+                  bg-midnightblue
+                  border border-transparent
+                  rounded-md
+                  shadow-md
+                  text-base
+                  font-medium
+                  text-white
+                  hover:opacity-70
+                  sm:inline-block
+                  sm:w-auto
+                "
+                href="assets/Katherine_Beck_Resume.pdf"
+                target="_blank"
+                ><span class="text-xl mr-3"
+                  ><i class="fas fa-file-alt"></i></span
+                >Resume</a
+              >
+              <a
+                class="
+                  mt-6
+                  sm:mx-2
+                  block
+                  w-full
+                  py-3
+                  px-5
+                  text-center
+                  bg-grouparooblue
+                  border border-transparent
+                  rounded-md
+                  shadow-md
+                  text-base
+                  font-medium
+                  text-white
+                  hover:bg-airbytepurple
+                  sm:inline-block
+                  sm:w-auto
+                "
+                href="https://tapestry-pipeline.github.io/case-study"
+                target="_blank"
+                >Read Tapestry Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tapestry -->
+    <div class="relative py-16">
+      <div
+        class="hidden absolute top-0 inset-x-0 h-1/2 lg:block"
+        aria-hidden="true"
+      ></div>
+      <div class="bg-gradient-to-r from-airbytepurple to-grouparooblue">
+        <div
+          class="
+            max-w-7xl
+            mx-auto
+            lg:to-transparent
+            lg:from-transparent
+            lg:bg-transparent
+            lg:px-8
+          "
+        >
+          <div class="lg:grid lg:grid-cols-12">
+            <div
+              class="
+                relative
+                z-10
+                lg:col-start-1
+                lg:row-start-1
+                lg:col-span-4
+                lg:py-16
+                lg:bg-transparent
+              "
+            >
+              <div
+                class="absolute inset-x-0 h-1/2 bg-white lg:hidden"
+                aria-hidden="true"
+              ></div>
+              <div class="max-w-sm mx-auto px-4 sm:px-6 lg:p-0">
+                <div class="aspect-w-1 aspect-h-1">
+                  <img
+                    class="object-cover object-center bg-white rounded-3xl shadow-2xl"
+                    src="/assets/tapestry_graphic.5952719d.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              
+            </div>
+
+            <div
+              class="
+                relative
+                lg:col-start-3
+                lg:row-start-1
+                lg:col-span-10
+                lg:rounded-3xl
+                lg:grid lg:grid-cols-10
+                lg:items-center
+                lg:py-12
+              "
+            >
+              <div
+                class="
+                  relative
+                  max-w-md
+                  mx-auto
+                  py-12
+                  px-4
+                  sm:max-w-3xl
+                  sm:py-16
+                  sm:px-6
+                  lg:max-w-none
+                  lg:p-0
+                  lg:col-start-4 lg:col-span-6
+                "
+              >
+              <p class="text-2xl text-white mt-6">
+                Tapestry automates the deployment of an end-to-end user data pipeline, with both data ingestion and syncing
+                components. 
+              </p>
+              <p class="text-2xl text-white mt-6"> 
+                Tapestry was built for developers who want full control over their data infrastructure, 
+                but without having to provision that infrastructure themselves. 
+              </p>
+              <br>
+                <div class="wrap mx-auto">
+                  <div class="grid grid-rows-10 grid-cols-6">
+                    
+                    <div class="row-start-1 col-start-2 col-span-5 self-end">
+                      <img class="object-cover rounded-lg" src="/assets/tap_ui_home_v2.e8117018.png" alt="">
+                    </div>
+                    <div class="row-start-2 col-start-1 col-span-5 self-end ">
+                      <img class="rounded-lg" src="/assets/overview-katherine_v2.d83e685a.gif" alt="">
+                    </div>
+                  </div>
+                  <a
+                class="
+                  mt-6
+                  sm:mx-2
+                  block
+                  w-full
+                  py-3
+                  px-5
+                  text-center
+                  bg-white
+                  border border-transparent
+                  rounded-md
+                  shadow-md
+                  text-base
+                  font-medium
+                  text-grouparooblue
+                  hover:bg-white
+                  hover:text-airbytepurple
+                  sm:inline-block
+                  sm:w-auto
+                "
+                href="https://tapestry-pipeline.github.io/case-study"
+                target="_blank"
+                >Read Tapestry Case Study</a
+              >
+              <a
+                class="
+                  mt-6
+                  sm:mx-2
+                  block
+                  w-full
+                  py-3
+                  px-5
+                  text-center
+                  bg-white
+                  border border-transparent
+                  rounded-md
+                  shadow-md
+                  text-base
+                  font-medium
+                  text-grouparooblue
+                  hover:bg-white
+                  hover:text-airbytepurple
+                  sm:inline-block
+                  sm:w-auto
+                "
+                href="https://tapestry-pipeline.github.io/case-study#toc-presentation"
+                target="_blank"
+                >Watch the Presentation</a
+              > 
+                </div>
+                
+                
+              <!-- <div>
+                <img class="rounded-lg shadow-lg" src="images/fullarchitecture_white.png" alt="">
+              </div> -->
+            </div>
+          </div>
+        
+          </div>
+        
+        
+  
+      </div>
+    </div>
+  </div>
+
+    <!-- Other Projects -->
+    <div class="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
+      <div class="absolute inset-0">
+        <div class="bg-white h-1/3 sm:h-2/3"></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto">
+        <div class="text-center">
+          <h2
+            class="
+              text-3xl
+              tracking-tight
+              font-extrabold
+              text-gray-900
+              sm:text-4xl
+            "
+          >
+            Other Projects
+          </h2>
+        </div>
+        <div
+          class="
+            mt-12
+            max-w-lg
+            mx-auto
+            grid
+            gap-10
+            xl:grid-cols-3
+            lg:grid-cols-3
+            md:grid-cols-2
+            md:max-w-none
+          "
+        >
+        
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/reaction.49b4ba2c.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">Reaction</p>
+                <p class="mt-3 text-base text-gray-500">
+                  Trello-like task management app.
+                </p>
+                <p class="mt-3 text-base text-airbytepurple">
+                  Node.js/Express, MongoDB, React/Redux
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/dijkstra.139d635c.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">
+                  Airline Routes
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  Airline routing application leveraging Dijkstra's algorithm to
+                  find the shortest path.
+                </p>
+                <p class="mt-3 text-base text-airbytepurple">React, JavaScript</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/todotracker.8ca48b3c.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">
+                  ToDo List 
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  An interactive todo list manager. Node.js, Handlebars.js, jQuery and an Express.js API.
+                </p>
+                <p class="mt-3 text-base text-airbytepurple">
+                  Node.js/Express, Handlebars, HTML/CSS
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/messbuck.0c2b46b9.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">
+                  Message Bucket 
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  RequestBin-like tool for receiving and debugging webhooks.
+                </p>
+                <p class="mt-3 text-base text-airbytepurple">
+                  Node.js/Express, PostgreSQL, Webhooks
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <div class="flex-shrink-0 p-6 flex justify-center bg-gray-200">
+              <img
+                class="h-40 drop-shadow-lg filter object-scale-down"
+                src="/assets/lsa_app.feac1d33.png"
+                alt=""
+              />
+            </div>
+            <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900 mt-2">
+                  Language Sample Analyzer
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  An app for transcribing early language samples and automating structural analysis.
+                </p>
+                <p class="mt-3 text-base text-airbytepurple">
+                  Ruby/Sinatra, ERB
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+ 
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-grouparooblue">
+      <div class="mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+          <span class="block">Let's Connect!</span>
+        </h2>
+        <p class="mt-4 mb-4 text-lg leading-6 text-gray-200">
+          I am looking for my next opportunity! Please get in touch if you think
+          I'd be a good fit for your team.
+        </p>
+        <div class="flex items-center justify-center flex-wrap">
+          <a
+            href="mailto:hello@katherinebeck.me"
+            class="
+              w-2/5
+              mt-4
+              mx-2
+              inline-flex
+              items-center
+              shadow-md
+              justify-center
+              px-5
+              py-2
+              border border-transparent
+              font-medium
+              rounded-md
+              text-midnightblue
+              bg-white
+              hover:bg-gray-300
+              sm:w-auto
+            "
+            target="_blank"
+          >
+            <span class="text-xl mr-3"><i class="fas fa-envelope"></i></span
+            >Email
+          </a>
+          <a
+            href="https://www.linkedin.com/in/katherine-m-beck"
+            class="
+              w-2/5
+              mt-4
+              mx-2
+              inline-flex
+              items-center
+              shadow-md
+              justify-center
+              px-5
+              py-2
+              border border-transparent
+              font-medium
+              rounded-md
+              text-midnightblue
+              bg-white
+              hover:bg-gray-300
+              sm:w-auto
+            "
+            target="_blank"
+          >
+            <span class="text-xl mr-3"><i class="fab fa-linkedin"></i></span
+            >LinkedIn
+          </a>
+          <a
+            href="https://github.com/kathmbeck"
+            class="
+              w-2/5
+              mt-4
+              mx-2
+              inline-flex
+              items-center
+              shadow-md
+              justify-center
+              px-5
+              py-2
+              border border-transparent
+              font-medium
+              rounded-md
+              text-midnightblue
+              bg-white
+              hover:bg-gray-300
+              sm:w-auto
+            "
+            target="_blank"
+          >
+            <span class="text-xl mr-3"><i class="fab fa-github"></i></span
+            >GitHub
+          </a>
+          <a
+            href="assets/Katherine_Beck_Resume.pdf"
+            target="_blank"
+            class="
+              w-2/5
+              mt-4
+              mx-2
+              inline-flex
+              items-center
+              shadow-md
+              justify-center
+              px-5
+              py-2
+              border border-transparent
+              font-medium
+              rounded-md
+              text-midnightblue
+              bg-white
+              hover:bg-gray-300
+              sm:w-auto
+            "
+          >
+            <span class="text-xl mr-3"><i class="fas fa-file-alt"></i></span
+            >Resume
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
